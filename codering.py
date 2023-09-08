@@ -1,31 +1,27 @@
-def caesar_cipher(text, shift):
-    result = ""
-    
-    for char in text:
+
+
+def decrypt_caesar_cipher(ciphertext, shift):
+    decrypted_text = "text"
+
+text = int(input(welke code wil je ontcijferen))
+
+    for char in ciphertext:
         if char.isalpha():
-
             is_upper = char.isupper()
-            
+            char = char.lower()
+            decrypted_char = chr(((ord(char) - ord('a') - shift) % 26) + ord('a'))
+            if is_upper:
+                decrypted_char = decrypted_char.upper()
+            decrypted_text += decrypted_char
+        else:
+            decrypted_text += char
 
-            char_code = ord(char)
-            
-
-            char_code = (char_code - ord('A' if is_upper else 'a') + shift) % 26
-            
-
-            char = chr(char_code + ord('A' if is_upper else 'a'))
-        
-        result += char
-    
-    return result
+    return decrypted_text
 
 
-text = "python codeert tekst met, python codeert met weer"
-shift = 10
+ciphertext = input("Enter the Caesar cipher text: ")
+shift = int(input("Enter the shift value (e.g., 3): "))
 
 
-encoded_text = caesar_cipher(text, shift)
-
-print("Original text:   ", text)
-print("Encoded text:    ", encoded_text)
-
+decrypted_text = decrypt_caesar_cipher(ciphertext, shift)
+print("Decrypted text: ", decrypted_text)

@@ -1,161 +1,149 @@
 import turtle
-def draw_arc(radius, angle):
-    turtle.circle(radius, angle)
 
-  
-turtle.speed(1)  
-turtle.pensize(2)  
+# Functie om een enkel commando uit te voeren
+def uitvoeren(commando):
+    if commando[0] == 'u':
+        turtle.up()
+    elif commando[0] == 'd':
+        turtle.down()
+    elif commando[0] == 'f':
+        afstand = float(commando[1:])
+        turtle.forward(afstand)
+    elif commando[0] == 'b':
+        afstand = float(commando[1:])
+        turtle.backward(afstand)
+    elif commando[0] == 'l':
+        hoek = float(commando[1:])
+        turtle.left(hoek)
+    elif commando[0] == 'r':
+        hoek = float(commando[1:])
+        turtle.right(hoek)
+    elif commando[0] == 'c':
+        gegevens = commando[1:].split(',')
+        straal = float(gegevens[0])
+        graden = float(gegevens[1])
+        turtle.circle(straal, graden)
+    elif commando[0] == 'p':
+        kleur = commando[1:]
+        turtle.pencolor(kleur)
+    elif commando[0] == 'i':
+        kleur = commando[1:]
+        turtle.fillcolor(kleur)
+    elif commando[0] == 's':
+        turtle.begin_fill()
+    elif commando[0] == 'e':
+        turtle.end_fill()
+    elif commando[0] == 'g':
+        gegevens = commando[1:].split(',')
+        x = float(gegevens[0])
+        y = float(gegevens[1])
+        turtle.goto(x, y)
 
+# Initialisatie van de schildpad
+t = turtle.Turtle()
+t.speed(10)  # Stel de tekeningsnelheid in
 
-turtle.penup()
-turtle.goto(130, 40)
-turtle.pendown()
-turtle.circle(100, 105)
-draw_arc(300, -180)
-turtle.circle(300, 30)
-draw_arc(30, 90)
-turtle.circle(300, 36)
-draw_arc(150, -20)
-turtle.circle(300, 40)
-draw_arc(30, -270)
-turtle.circle(300, 35)
-draw_arc(185, 105)
-turtle.circle(105, 5)
-draw_arc(60, 500)
-draw_arc(500, -28)
-turtle.forward(10)
-draw_arc(80, 70)
-turtle.forward(7)
-draw_arc(70, -70)
-turtle.forward(10)
-draw_arc(90, 90)
-turtle.circle(10, 200)
-turtle.forward(10)
-draw_arc(80, 60)
-draw_arc(10, 50)
-turtle.forward(85)
-draw_arc(100, 180)
-draw_arc(10, 110)
-turtle.circle(100, 55)
-draw_arc(10, 85)
-turtle.forward(12)
-draw_arc(240, -240)
-turtle.forward(13)
-draw_arc(240, 240)
-draw_arc(10, 300)
-draw_arc(10, 70)
-turtle.forward(47)
-draw_arc(500, 180)
-draw_arc(500, 2)
-draw_arc(100, 5)
-turtle.forward(5)
-draw_arc(100, 180)
-turtle.forward(80)
-draw_arc(200, -250)
-draw_arc(100, 60)
-turtle.forward(180)
-draw_arc(100, 60)
-turtle.forward(60)
-draw_arc(10, 50)
-turtle.forward(50)
-draw_arc(100, 60)
-turtle.forward(180)
-draw_arc(100, 60)
-turtle.forward(60)
-draw_arc(10, -230)
-turtle.forward(100)
-draw_arc(100, 110)
-turtle.forward(180)
-draw_arc(100, 10)
-turtle.forward(5)
-draw_arc(100, 10)
-draw_arc(10, 40)
-draw_arc(100, 35)
-draw_arc(10, 180)
-turtle.forward(5)
-draw_arc(100, 10)
-draw_arc(10, 110)
-draw_arc(100, 55)
-draw_arc(10, 50)
-turtle.forward(85)
-draw_arc(100, 60)
-turtle.forward(180)
-draw_arc(100, 60)
-turtle.forward(60)
-draw_arc(10, -300)
-draw_arc(10, 60)
-draw_arc(100, 20)
-turtle.forward(180)
-draw_arc(100, 20)
-turtle.goto(-230, 0)
-turtle.pendown()
-draw_arc(100, 60)
-turtle.forward(110)
-draw_arc(100, 10)
-turtle.forward(180)
-draw_arc(100, 10)
-turtle.forward(5)
-draw_arc(100, 10)
-draw_arc(10, 40)
-draw_arc(100, 35)
-draw_arc(10, 180)
-turtle.forward(5)
-draw_arc(100, 10)
-draw_arc(10, 110)
-draw_arc(100, 55)
-draw_arc(10, 50)
-turtle.forward(85)
-draw_arc(100, 60)
-turtle.forward(180)
-draw_arc(100, 60)
-turtle.forward(60)
-draw_arc(10, -260)
-draw_arc(20, 20)
-draw_arc(100, 40)
-draw_arc(60, -100)
-draw_arc(100, 5)
-draw_arc(10, 180)
-turtle.forward(5)
-draw_arc(100, 5)
-turtle.forward(30)
-draw_arc(100, 20)
-draw_arc(20, 70)
-draw_arc(10, -250)
-draw_arc(100, 20)
-turtle.forward(180)
-draw_arc(100, 20)
-turtle.goto(-300, -10)
-turtle.pendown()
-turtle.right(15)
-turtle.circle(100, 15)
-draw_arc(300, -180)
-turtle.forward(40)
-draw_arc(5, -163)
-turtle.forward(5)
-draw_arc(5, -160)
-turtle.forward(10)
-draw_arc(5, -180)
-turtle.forward(10)
-draw_arc(180, 180)
-turtle.forward(20)
-draw_arc(5, 167)
-turtle.forward(5)
-draw_arc(5, 160)
-turtle.goto(0, 0)
-
-
-turtle.penup()
-turtle.goto(130, 125)
-turtle.pendown()
-draw_arc(290, -290)
-turtle.forward(5)
-
-
-turtle.penup()
-turtle.goto(166, 130)
-turtle.pendown()
-draw_arc(270, -270)
-turtle.forward(3)
-draw_arc(4, -180)
-turtle.forward(3)
-draw_arc
+# Lijst met commando's om de tekening te maken
+commando_lijst = [
+    "i#F6D02F",
+    "s",
+    "u",
+    "c130,40",
+    "d",
+    "c100,105",
+    "l180",
+    "c-100,5",
+    "l-300.0",
+    "c300,30",
+    "c30,50",
+    "l90.0",
+    "c300,36",
+    "l-76.0",
+    "c150,70",
+    "l-20.0",
+    "c300,40",
+    "c30,50",
+    "l-270.0",
+    "c300,35",
+    "l185.0",
+    "c105,95",
+    "l180",
+    "c-105,5",
+    "l60.0",
+    "c500,18",
+    "l-28.0",
+    "f10",
+    "l80.0",
+    "f7",
+    "l-70.0",
+    "f10",
+    "l90.0",
+    "c10,80",
+    "l200.0",
+    "f10",
+    "l80.0",
+    "c10,80",
+    "l220.0",
+    "f12",
+    "l-240.0",
+    "f13",
+    "l240.0",
+    "c10,70",
+    "l-300.0",
+    "c10,70",
+    "l-70.0",
+    "c300,18",
+    "l47.0",
+    "c500,8",
+    "l180",
+    "c-500,15",
+    "l2.0",
+    "c100,65",
+    "l5.0",
+    "c100,5",
+    "l180",
+    "c-100,5",
+    "l80.0",
+    "c200,20",
+    "c20,70",
+    "l-250.0",
+    "c-100,20",
+    "l180",
+    "c100,20",
+    "l60.0",
+    "c10,70",
+    "l50.0",
+    "c-100,20",
+    "l180",
+    "c100,20",
+    "l-230.0",
+    "c100,60",
+    "l110.0",
+    "c-100,10",
+    "l180",
+    "c100,10",
+    "l5.0",
+    "c100,10",
+    "c-100,40",
+    "c100,35",
+    "l180",
+    "c-100,10",
+    "l110.0",
+    "c100,55",
+    "c10,50",
+    "l85.0",
+    "c100,20",
+    "l180",
+    "c-100,20",
+    "l-300.0",
+    "c10,50",
+    "l60.0",
+    "c100,20",
+    "l180",
+    "c-100,20",
+    "l-260.0",
+    "c20,50",
+    "l20.0",
+    "c100,40",
+    "l60.0",
+    "c-100,5

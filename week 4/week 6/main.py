@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-data = np.genfromtxt("X:\Documenten\GitHub\Ichthus\week 4\week 6\mjlo-15_0.txt", delimiter=',')
+data = np.genfromtxt("mjlo-15_0.txt", delimiter=',')
 timestamp = data[:, 0]
 temperature = data[:, 8]  
 humidity = data[:, 6]    
